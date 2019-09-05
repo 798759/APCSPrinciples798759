@@ -1,12 +1,11 @@
 class ball{
-constructor(x,y,dx,dy,id,sizeX,sizeY){
-this.location=  createVector(x,y)
+constructor(dx,dy,id,sizeX){
+this.location=  createVector(random(-800,800),random(-800,800))
 this.velocity =  createVector(dx,dy)
 this.acc = createVector(0,.1);
 this.clr=color(random(255),random(255),random(255));
 this.id=id;
 this.sizeX=sizeX;
-this.sizeY=sizeY;
 }
 
 Run(){
@@ -23,23 +22,36 @@ checkedges(){
   if(this.location.y<0|| this.location.y>height){
     this.velocity.y= -this.velocity.y;
   }
-//if(this.velocity.x<.01){
-  //this.velocity.x=.5
-  //this.velocity.y=.5
-//}
 }
 
 
 
 update(){
+var distanceToBigBall;
+if(this.id>=0){
+  distanceToBigBall = this.location.dist(bigball.location);
+  if(distanceToBigBall < 250){
+    this.acc = p5.Vector.sub(bigball.location, this.location);
+    this.acc.normalize();
+    this.acc.mult(0.1);
+  }
+  if(distanceToBigBall<150){
+    this.acc = p5.Vector.sub(bigball.location, this.location);
+    this.acc.normalize();
+    this.acc.mult(0.5);
+  }
+
+
 //this.velocity.add(this.acc);
+this.velocity.add(this.acc);
 this.location.add(this.velocity);
+this.velocity.limit(5);
 
 
 }
 render(){
   fill(this.clr);
-  ellipse(this.location.x,this.location.y,this.sizeX,this.sizeY);
+  ellipse(this.location.x,this.location.y,this.sizeX,this.sizeX);
 }
 
 

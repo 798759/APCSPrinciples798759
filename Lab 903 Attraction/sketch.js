@@ -9,12 +9,13 @@ function RunBalls(){
   for(var i=0; i<balls.length; i++){
     balls[i].Run();
   }
+  bigball.Run();
 }
   function LoadBalls(){
-    bigball = new ball(random(-800,800),random(-800,800),2,2,-1,75,75);
     for(var i=0; i<100; i++){
-      balls[i]= new ball(random(-800,800),random(-800,800),5,5,i,25,25);
+      balls[i]= new ball(5,5,i,25,25);
     }
+    bigball = new ball(2,2,-1,75,75);
 }
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -29,6 +30,6 @@ LoadBalls();
 function draw() {
 background(5, 5, 5,20);
   RunBalls();
-  bigball.Run();
+
 
 }
