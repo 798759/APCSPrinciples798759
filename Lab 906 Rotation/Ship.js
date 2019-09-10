@@ -1,5 +1,5 @@
 class Ship{
-constructor(dx,dy,id,sizeX){
+constructor(dx,dy,i){
 this.location=  createVector(random(-800,800),random(-800,800))
 this.velocity =  createVector(dx,dy)
 this.acc = createVector(0,.1);
@@ -51,7 +51,7 @@ this.velocity.limit(5);
 }
 render(){
   fill(this.clr);
-  ellipse(this.location.x,this.location.y,this.sizeX,this.sizeX);
+  triangle();
 }
 
 
