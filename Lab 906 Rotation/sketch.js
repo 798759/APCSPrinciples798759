@@ -12,7 +12,7 @@ function RunTrig(){
 }
   function LoadTrig(){
     for(var i=0; i<100; i++){
-      tris[i]= new Ship(5,5,i,25,25);
+      tris[i]= new Ship(5,5,i);
     }
   }
 function setup() {
