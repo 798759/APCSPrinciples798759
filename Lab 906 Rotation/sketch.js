@@ -4,13 +4,16 @@
 //  The setup function function is called once when your program begins
 
 var tris=[];
+var bigball;
 
-function RunTrig(){
+function RunObjects(){
+   bigball.Run();
   for(var i=0; i<tris.length; i++){
     tris[i].Run();
   }
 }
-  function LoadTrig(){
+  function LoadObjects(){
+    bigball = new ball(random(-0.5,0.5),random(-0.5,0.5)-1,50)
     for(var i=0; i<100; i++){
       tris[i]= new Ship(5,5,i);
     }
@@ -20,14 +23,14 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5,20);
   fill(200, 30, 150);
-LoadTrig();
+LoadObjects();
 //Creates balls
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
 background(5, 5, 5,20);
-  RunTrig();
+  RunObjects();
 
 
 }

@@ -5,7 +5,7 @@ this.velocity =  createVector(dx,dy)
 this.acc = createVector(0,.1);
 this.clr=color(random(255),random(255),random(255));
 this.id=id;
-this.sizeX=sizeX;
+this.angle = this.location.dist(bigball.location);
 }
 
 Run(){
@@ -52,7 +52,10 @@ this.velocity.limit(5);
 }
 render(){
   fill(this.clr);
-push();
+  this.angle = this.angle + 0.1;
+  push();
+  translate(this.location.x, this.location.y);
+  rotate(this.angle);
   triangle(-5,8,5,8,0,-8);
   pop();
 }
