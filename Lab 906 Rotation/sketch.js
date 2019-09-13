@@ -3,7 +3,7 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 
-var tris=[];
+var tris=[];s
 var bigball;
 
 function RunObjects(){
@@ -13,7 +13,7 @@ function RunObjects(){
   }
 }
   function LoadObjects(){
-    bigball = new ball(random(-0.5,0.5),random(-0.5,0.5)-1,50)
+    bigball = new ball(random(-0.5,0.5),random(-0.5,0.5)-1s)
     for(var i=0; i<100; i++){
       tris[i]= new Ship(5,5,i);
     }

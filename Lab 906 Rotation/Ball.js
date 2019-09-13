@@ -1,11 +1,10 @@
 class ball{
-constructor(dx,dy,id,sizeX){
+constructor(dx,dy,id){
 this.location=  createVector(random(width/2),random(height/2))
 this.velocity =  createVector(dx,dy)
-this.acc = createVector(0,.1);
+this.acc = createVector(0,1);
 this.clr=color(random(255),random(255),random(255));
 this.id=id;
-this.sizeX=sizeX;
   }
 
 Run(){
@@ -16,11 +15,11 @@ Run(){
   }
 
 checkedges(){
-  if(this.location.x<0|| this.location.x>width){
-    this.velocity.x= -this.velocity.x;
+  if(this.location.x<0 || this.location.x>width){
+    this.velocity.x= -this.velocity.x
   }
-  if(this.location.y<0|| this.location.y>height){
-    this.velocity.y= -this.velocity.y;
+  if(this.location.y<0 || this.location.y>height){
+    this.velocity.y= -this.velocity.y
   }
 }
 
@@ -48,8 +47,7 @@ this.velocity.limit(5);
   }
 
 render(){
-  //fill(this.clr);
-  ellipse(this.location.x,this.location.y,this.sizeX,this.sizeX);
+  ellipse(this.location.x,this.location.y,50,50);
     fill(this.clr);
   }
 }
