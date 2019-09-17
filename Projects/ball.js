@@ -1,13 +1,12 @@
-class ball(){
-    construcor(id){
-      var grav=.5;
-      var dy=1;
-      var state;
-      this.location = createVector(random(200,600),30)
-      this.velocity = createVector(random(100,200),dy)
+class ball{
+    constructor(id,dy,grav,x,y){
+      this.dy=dy;
+      this.grav=grav;
+      this.loc = createVector(x,y);
+      this.velocity = createVector(random(1,5),this.dy);
       this.id=id;
       this.clr= color(random(255),random(255),random(255));
-      this.acc = createVector(0,grav);
+      this.acc = createVector(0,this.grav);
     }
     run(){
       this.check();
@@ -15,26 +14,26 @@ class ball(){
       this.render();
     }
     check(){
-      if(this.location.x=<0){
+      if(this.loc.x<=0){
         this.velocity.x = -this.velocity.x;
       }
-      if(this.location.x >= width){
+      if(this.loc.x >= width){
         this.velocity.x = -this.velocity.x;
       }
-      if(this.location.y=<0){
-        balls.splice(id);
-        state = false;
+      if(this.loc.y<0){
+        balls.splice(this.id);
+        //state = false;
       }
-      if(this.location.y>=height){
+      if(this.loc.y>height){
         this.velocity.y= -this.velocity.y;
       }
     }
     update(){
       this.velocity.add(this.acc);
-      this.location.add(this.velocity)
+      this.loc.add(this.velocity)
     }
     render(){
       fill(this.clr);
-      ellipse(this.location.x, this.locaion.y, 30,30);
+      ellipse(this.loc.x, this.loc.y, 30,30);
     }
 }

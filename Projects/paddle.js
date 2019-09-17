@@ -1,3 +1,3 @@
-class paddle(){
-  
+class paddle{
+
 }
