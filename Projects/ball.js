@@ -17,20 +17,24 @@ class ball{
       if(this.loc.x<=0){
         this.velocity.x = -this.velocity.x;
       }
-      if(this.loc.x >= width){
+      if(this.loc.x>=width){
         this.velocity.x = -this.velocity.x;
       }
-      if(this.loc.y<0){
-        balls.splice(this.id);
-        //state = false;
-      }
-      if(this.loc.y>height){
+      if(this.loc.y<=0){
         this.velocity.y= -this.velocity.y;
+      }
+      if(this.loc.y>=height){
+        this.velocity.y= -this.velocity.y;
+      }
+      if( this.loc.y>800){
+        balls.splice(this.id);
+        //console.log("hi");
       }
     }
     update(){
       this.velocity.add(this.acc);
       this.loc.add(this.velocity)
+    //  this.velocity.limit(10);
     }
     render(){
       fill(this.clr);

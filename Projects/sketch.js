@@ -1,18 +1,35 @@
 
 
 var balls =[];
-var b1;
+var p1;
+
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-b1 = new ball(1,1,.5,random(200,600),30);
+  loadObjects(2);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
 background(20,20,20);
-b1.run();
-//background(20,20,20)
+runObjects();
+}
+
+function loadObjects(num){
+for(var i =0; i<num; i++){
+  balls[i] =  new ball(i,1,.1,random(100,800),30);
+}
+p1= new paddle(200,300,600);
+}
+
+function runObjects(){
+for(var i =0; i<balls.length; i++){
+  balls[i].run();
+}
+p1.run();
+}
+function gameStates(){
+
 }
