@@ -45,6 +45,7 @@ class ball{
       if(this.loc.x > p1.loc.x&& this.loc.x < p1.loc.x+p1.l
       && this.loc.y> p1.loc.y&& this.loc.y<p1.loc.y+30){
         this.velocity.y= -this.velocity.y;
+        score++;
       }
       }
 
