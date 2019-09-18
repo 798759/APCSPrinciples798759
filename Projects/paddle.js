@@ -6,6 +6,7 @@ class paddle{
   }
     run(){
       this.move();
+      this.sendHitbox();
       this.render();
 
     }
@@ -14,14 +15,14 @@ class paddle{
       rect(this.loc.x,this.loc.y,this.l,30);
     }
     move(){
-    if(keyIsDown(65)){
-      //console.log("hi")
-      this.loc.x=this.loc.x-15;
-    }
-    if(keyIsDown(68)){
-      //console.log("hi")
+      if(keyIsDown(65)){
+        this.loc.x=this.loc.x-15;
+        }
+      if(keyIsDown(68)){
       this.loc.x=this.loc.x+15;;
+      }
     }
-
+    sendHitbox(){
+      return this.loc.x;
     }
 }

@@ -2,6 +2,7 @@
 
 var balls =[];
 var p1;
+var score;
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -15,6 +16,8 @@ function setup() {
 function draw() {
 background(20,20,20);
 runObjects();
+//texsize(25);
+text("Score"+score);
 }
 
 function loadObjects(num){
