@@ -5,7 +5,7 @@ class ball{
       this.loc = createVector(x,y);
       this.velocity = createVector(random(1,5),this.dy);
       this.id=id;
-      this.clr= color(random(255),random(255),random(255));
+      this.clr= color(0,0,0);
       this.acc = createVector(0,this.grav);
     }
     run(){
