@@ -6,7 +6,6 @@ class paddle{
   }
     run(){
       this.move();
-      this.sendHitbox();
       this.render();
 
     }
@@ -26,7 +25,5 @@ class paddle{
       }
     }
   }
-    sendHitbox(){
-      return this.loc.x;
-    }
+
 }
