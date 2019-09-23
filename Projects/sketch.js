@@ -21,9 +21,10 @@ function setup() {
 function draw() {
 fill(50);
 rect(25,25,z,w);
+rect(200,25,z,w)
 textSize(64)
 text("Welocme to Fun \n With Balls",textX,textY)
-if(mouseState=== true){
+if(mouseState=== 1){
   x =1;
   z = null;
   w = null;
@@ -31,7 +32,6 @@ if(mouseState=== true){
   textY = 100000;
 }
 if(x===1) gameStates(1);
-  //gameStates();
 }
 
 
@@ -68,6 +68,7 @@ function gameStates(mode){
     runObjects();
     textSize(32);
     text(("Score: "+score),10,30);
+    deleteBalls();
     if(booleanState()===false){
       background(255,255,255);
       textSize(40);
@@ -81,6 +82,18 @@ function gameStates(mode){
 function mouseClicked(){
   if(mouseX > 25 && mouseX < 75
   && mouseY> 25 && mouseY <75){
-    mouseState= true
+    mouseState= 1;
+  }
+  if(mouseX > 200 && mouseX < 250
+  && mouseY> 25 && mouseY <75){
+    mouseState= 2;
+}
+}
+
+function deleteBalls(){
+  for(var i=balls.length-1; i>=0; i--){
+    if(balls[i].loc.y>height){
+      balls.splice(i, 1);
+    }
   }
 }

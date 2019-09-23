@@ -28,7 +28,7 @@ class ball{
         this.velocity.y= -this.velocity.y;
       }
       if( this.loc.y>800){
-        balls.splice(this.id);
+        ///balls.splice(this.id);
         //console.log("hi");
       }
     }
