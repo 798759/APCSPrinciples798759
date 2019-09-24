@@ -6,11 +6,10 @@ var score=0;
 var firstRun=0;
 var gameStart=0;
 var mode;
-var x=0;
-var z = 50;
-var w=50;
 var textX=200;
 var textY=400;
+var b1;
+var x;
 var mouseState;
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -19,9 +18,8 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw() {
-fill(50);
-rect(25,25,z,w);
-rect(200,25,z,w)
+b1= new Button(100,100,25,25,25);
+b1.loadButton();
 textSize(64)
 text("Welocme to Fun \n With Balls",textX,textY)
 if(mouseState=== 1){
