@@ -15,15 +15,14 @@ class paddle{
     }
     move(){
       if(keyIsDown(65)){
-  if(this.loc.x>0&&this.loc.x<800){
-        this.loc.x=this.loc.x-15;
+  if(this.loc.x>0&&this.loc.x<width){
+        this.loc.x=this.loc.x-20;
       }
         }
       if(keyIsDown(68)){
-      if(this.loc.x+this.l>0&&this.loc.x+this.l<800){
-      this.loc.x=this.loc.x+15;;
+      if(this.loc.x+this.l>0&&this.loc.x+this.l<width){
+      this.loc.x=this.loc.x+20;
       }
     }
   }
-
 }

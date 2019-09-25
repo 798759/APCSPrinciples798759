@@ -1,25 +1,30 @@
 class Button{
   constructor(x,y,r,g,b,id){
+  var strings =["Easy","Hard","2\nPlayer"];
   this.x =x;
   this.y =y;
-  this.w = 25;
-  this.z= 25;
+  this.w = 70;
+  this.z= 70;
   this.r =r;
   this.g =g;
   this.b=b;
   this.id=id;
+  this.str = strings[this.id];
   }
   loadButton(){
+    if(typeof gameState == "undefined"){
     fill(this.r,this.g,this.b);
     rect(this.x,this.y,this.w,this.z);
-  }
-  mouseClicked(){
-    if(mouseX > this.x && mouseX < this.x+
-    && mouseY> 25 && mouseY <75){
-      mouseState= 1;
+    fill(0,0,0);
+    textSize(20);
+    text(this.str,this.x,this.y,this.w,this.z)
     }
-    if(mouseX > 200 && mouseX < 250
-    && mouseY> 25 && mouseY <75){
-      mouseState= 2;
-}
+  }
+  CheckMouse(){
+    if(mouseX > this.x && mouseX < this.x+this.w
+    && mouseY> this.y && mouseY <this.y+this.z &&
+    mouseState=== true){
+      gameState= this.id;
+    }
+  }
 }
