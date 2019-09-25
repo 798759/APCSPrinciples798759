@@ -1,6 +1,6 @@
 class Button{
   constructor(x,y,r,g,b,id){
-  var strings =["Easy","Hard","2\nPlayer"];
+  var strings =["Easy","Hard","2\nPlayer","Restart"];
   this.x =x;
   this.y =y;
   this.w = 70;
