@@ -12,7 +12,7 @@ class Button{
   this.str = strings[this.id];
   }
   loadButton(){
-    if(typeof gameState == "undefined"){
+    if(gameState === -1){
     fill(this.r,this.g,this.b);
     rect(this.x,this.y,this.w,this.z);
     fill(0,0,0);
