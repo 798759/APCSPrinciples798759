@@ -4,13 +4,10 @@ var balls =[];
 var p1;
 var score=0;
 var firstRun=0;
-var gameStart=0;
-var mode;
 var textX;
 var textY;
-var x;
 var gameState=-1;
-var mouseState;
+var mouseState=-1;
 var b1,b2;
 
 function setup() {
@@ -19,19 +16,19 @@ function setup() {
  textY = height/2;
  textX = width/2-200;
  frameRate(60);
- intGame();
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
-loadStartScreen();
-mouseState=false;
-if(gameState=== 0){
-  x =0;
-  textX =100000;
-  textY = 100000;
-}
-if(x===0) gameStates(0);
+  loadStartScreen();
+  mouseState=false;
+  if(gameState===0){
+  gameStates(0);
+  }
+  if(gameState===1){
+  gameStates(1);
+  }
+    //endGame();
 }
 
 
@@ -69,21 +66,21 @@ var check=0;
 }
 
 function gameStates(mode){
-  if(mode===0) gameStart = 1;
-  if(gameStart==1){
     background(255,255,255,60);
-    if(firstRun==0)loadObjects(4,300);
+    if(firstRun==0)intGame(gameState);
     firstRun++;
+    runGame();
+}
+  function runGame(){
     runObjects();
+    textX =100000;
+    textY = 100000;
     textSize(32);
     text(("Score: "+score),10,30);
     deleteBalls();
-    endGame();
-  }
+    //endGame();
 }
-function gameStateEasy(){
 
-}
 function endGame(){
   if(booleanState()===false){
     background(255,255,255);
@@ -91,12 +88,11 @@ function endGame(){
     text(("Score: "+score),300,450);
     textSize(64);
     text("Game Over",300,400);
-    gameStart = 0;
     gameState=-1;
     b1 = new Button((width/2-150)+0*150,height/2+200,141,219,255,4);
     b1.loadButton();
     b1.CheckMouse();
-
+    //if(gameState===4)gameState=0;
   }
 }
 function loadStartScreen(numOfButtons){
