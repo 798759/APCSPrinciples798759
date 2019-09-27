@@ -78,7 +78,7 @@ function gameStates(mode){
     textSize(32);
     text(("Score: "+score),10,30);
     deleteBalls();
-    //endGame();
+    endGame();
 }
 
 function endGame(){
@@ -92,8 +92,11 @@ function endGame(){
     b1 = new Button((width/2-150)+0*150,height/2+200,141,219,255,4);
     b1.loadButton();
     b1.CheckMouse();
-    //if(gameState===4)gameState=0;
+    if(gameState===4){
+      gameState=0;
+      console.log("hi");
   }
+}
 }
 function loadStartScreen(numOfButtons){
   var buttons =[];
