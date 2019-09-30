@@ -1,4 +1,4 @@
-class ball{
+class ball{ // I cant be bothered to comment on this class good luck finding out what it does
     constructor(id,dy,grav,x,y){
       this.dy=dy;
       this.grav=grav;
