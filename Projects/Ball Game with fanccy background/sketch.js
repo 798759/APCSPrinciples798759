@@ -10,16 +10,20 @@ var gameState=3; // gameState the driving force and biggest pain in the neck of 
 var mouseState;
 var b1,b2;
 var track;
+var bg;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
+  bg = new bg();
  textY = height/2;// Sets position of text
  textX = width/2-200;
+ bg.setupBackground();
  frameRate(60); // Forces the game to run at 60 frame cause this game is not ment for chrombooks
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
+  bg.setDraw();
   if(gameState===0){
   gameStates(0); /// Logic to decide on gamemode
   }
