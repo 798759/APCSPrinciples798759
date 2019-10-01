@@ -40,6 +40,7 @@ class Button{
     mouseState=== true){
       gameState=track;
       firstRun=0;
+      score=0;
     }
   }
 }
