@@ -20,12 +20,13 @@ function draw() {
 }
 
 function mySort(){
+  for(var i=0; i>ray.length; i++)
   for(var i=0; i>ray.length; i++){
     for(var i=0; i>ray.length; i++){
       if(i>big){
       big=i;
       }
-sort[ray.length-1]=big;
+sort[i]=big;
     }
   }
 }
