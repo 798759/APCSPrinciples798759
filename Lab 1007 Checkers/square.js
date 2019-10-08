@@ -5,7 +5,7 @@ class square{
   this.clr = clr;
   }
 
-  render(){
+render(){
     if(this.clr%2===0){
     fill(255);
   } else {
