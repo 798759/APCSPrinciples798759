@@ -18,7 +18,7 @@ for(var i=0; i<squares.length; i++){
 }
   for(var c=0; c<8; c++){
     for(var r=0; r<8; r++){
-        squares[r][c]= new square((c*100),(r*100),c);
+        squares[r][c]= new square((c*100),(r*100),r+c);
     }
   }
 }
