@@ -20,8 +20,8 @@ function draw() {
 }
 
 function bubbleSort(){
-  for(var i=0; i>list.length; i++){
-    for(var x=0; x>list.length-1; x++){
+  for(var i=0; i<list.length-1; i++){
+    for(var x=0; x<list.length-1-x; x++){
       if(list[x]>list[x+1]){
       temp= list[i];
       list[x]= list[x+1];
