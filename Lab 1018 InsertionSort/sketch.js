@@ -10,7 +10,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   console.log(list);
-  bubbleSort();
+  insertionSort();
 
 }
 
@@ -19,11 +19,11 @@ function draw() {
 
 }
 
-function bubbleSort(){
-  for(var i=0; i<list.length; i++){
-    for(var x=0; x<list.length-1-i; x++){
-      if(list[x]>list[x+1]){
-      swap(x,x+1);
+function insertionSort(){
+  for(var i=1; i<list.length; i++){
+    for(var x=i; x>0; x--){
+      if(list[x]<list[x-1]){
+      swap(x,x-1);
       }
     }
   }
