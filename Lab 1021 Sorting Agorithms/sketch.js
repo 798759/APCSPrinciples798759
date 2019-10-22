@@ -2,7 +2,7 @@
 // 	Date or version number
 //  This is a comment
 //  The setup function function is called once when your program begins
-var list = [6,8,7,9,5];
+var list = [9,8,7,6,5,4,3,2,1];
 var temp;
 var numOfSwaps=0;
 function setup() {
@@ -32,21 +32,27 @@ function insertionSort(){
 }
 
 function selectionSort() {
-  //var n = list.length;
+  var t1 = millis();
   var index;
-  for(var i=0; i < list.length; i++){
+  for(var i=0; i < list.length-1; i++){
     var index = i;
     var min = list[i];
     for(var j = i+1; j<list.length; j++){
-      if(min< list[j]){
-        min =list[j];
+      if(list[j]< list[index]){
         index = j;
       }
     }
-    swap(list[index],list[i]);
+    var small = list[index];
+    list[index] = list[i];
+    list[i]=small;
+    numOfSwaps++;
   }
+  var t2 = millis();
+  var seconds = (t2-t1)/1000;
   console.log("Swaps: "+numOfSwaps);
   console.log(list);
+  console.log("Seconds: "+seconds);
+
 }
 
 function swap(a,b){
@@ -54,4 +60,8 @@ temp = list[a];
 list[a]=list[b];
 list[b] = temp;
 numOfSwaps++;
+}
+
+function time(t1){
+var t2 = millis()
 }
