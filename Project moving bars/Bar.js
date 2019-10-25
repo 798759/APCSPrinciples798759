@@ -1,13 +1,20 @@
-class bar{
-  constructor(height,x,y){
-    this.height = height;
-    this.width = width/10;
-    this.loc = createVector(x,y);
+
+class Bar{
+  constructor(x,y,w,h,c){
+    this.loc=createVector(x,y);
+    this.w=w;
+    this.h=h;
   }
-  render(){
-    rect(this.height,this.width,this.loc.x,this.loc.y);
-  }
-  run(){
-    render();
-  }
+run(){
+
+  this.render();
+
+}
+render(){
+  fill(255,23,201);
+  rect(this.loc.x,this.loc.y,this.w,this.h);
+}
+set(i){
+  this.loc.x=i*25;
+}
 }

@@ -1,40 +1,52 @@
-var list = [];
-function setup() {
-  var cnv = createCanvas(800, 800);
-  cnv.position((windowWidth-width)/2, 30);
-  background(5, 5, 5);
-  fill(200, 30, 150);
+
+var bars=[];
+
+//put setup code here
+function setup(){
+  var cnv=createCanvas(800,800);
+  cnv.position((windowWidth-width)/2,30);
+  background(235);
   loadBars();
-
-}
-
-//  The draw function is called @ 30 fps
-function draw() {
-
-}
-
-function loadBars(){
-  for(var i=0; i<10; i++){
-    list[i]=new bar(random(height),(10*i),0);
+  frameRate(5);
+  for(var i=0; i<bars.length; i++){
+    bars[i].run();
   }
 }
-function spitBars(){
-  for(var i=0; i<10; i++){
-    list[i].run();
+
+function draw(){
+bubblesort();
+}
+
+function move(){
+  for(var i=0; i<bars.length; i++){
+    bars[i].set(i);
+  }
+  background(235);
+  for(var i=0; i<bars.length; i++){
+    bars[i].run();
   }
 }
-function bubbleSort(){
-  for(var i=0; i<list.length; i++){
-    for(var x=0; x<list.length-1-i; x++){
-      if(list[x]>list[x+1]){
-      swap(x,x+1);
+function bubblesort(){
+    for (var j=0; j<bars.length-1; j++){
+      if(bars[j].h>bars[j+1].h){
+        swap(bars, j, j+1);
+        move();
       }
     }
   }
+
+
+
+
+function loadBars(){
+  for (var x=0; x<32; x++){
+    var w=int(random(1,32));
+    bars[x]= new Bar(25*x,800-(25*w),25,(25*w))
+  }
 }
 
-function swap(a,b){
-temp = list[a];
-list[a]=list[b];
-list[b] = temp;
+function swap(list,a,b){
+  var temp=list[a];
+  list[a]=list[b];
+  list[b]=temp;
 }
