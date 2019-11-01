@@ -2,10 +2,12 @@ class snake{
   constructor(x,y){
     this.loc = createVector(x,y);
     this.s = 25;
+    this.vel = createVector(this.s,this.s);
+
   }
   run(){
-    render()
-    move()
+    this.render();
+    this.move();
   }
   render(){
     fill(255,255,0); /// Set Color of Snake
@@ -13,23 +15,28 @@ class snake{
   }
   move(){
     if(keyCode===LEFT_ARROW){
-      this.loc.x = this.loc.x -this.s;
+      this.loc.x = this.loc.x - this.vel.x;
     }
     if(keyCode===RIGHT_ARROW){
-      this.loc.x = this.loc.x + this.s;
+      this.loc.x = this.loc.x + this.vel.x;
     }
     if(keyCode===38){
-      this.loc.y= this.loc.y + this.s;
+        this.loc.y = this.loc.y-this.vel.y;
     }
     if(keyCode===40){
-      this.loc.y = this.loc.y - this.s;
+      this.loc.y=this.loc.y + this.vel.y;
     }
+  }
+  checkEdges(){
+  if(this.loc.x<0|| this.loc.x> width){
+    this.vel.x = -this.vel.x;
+  }
   }
 }
 
 class segment{
-  var segmentList = [];
   constructor(x,y){
     this.loc = createVecctor(x,y);
+      this.segmentList = [];
   }
 }
