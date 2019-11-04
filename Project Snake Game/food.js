@@ -11,4 +11,10 @@ class food{
     fill(240,20,5);
     rect(this.x,this.y,this.size,this.size);
   }
+  getX(){
+    return this.x;
+  }
+  getY(){
+    return this.y
+  }
 }

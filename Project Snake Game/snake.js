@@ -1,7 +1,7 @@
 class snake{
-  constructor(x,y){
+  constructor(x,y,size){
     this.loc = createVector(x,y);
-    this.s = 25;
+    this.s = size;
     this.vel = createVector(this.s,this.s);
 
   }
@@ -31,6 +31,11 @@ class snake{
   if(this.loc.x<0|| this.loc.x> width){
     this.vel.x = -this.vel.x;
   }
+  }
+  eaten(){
+    if(f1.getX()===this.loc.x&&f1.getY()===this.loc.y){
+      
+    }
   }
 
 }
