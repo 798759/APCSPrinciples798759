@@ -12,3 +12,8 @@ frameRate(10);
 function draw() {
 snake1.run();
 }
+
+function runFood(){
+
+  var f1 = new food()
+}

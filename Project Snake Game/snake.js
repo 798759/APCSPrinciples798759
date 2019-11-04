@@ -32,6 +32,7 @@ class snake{
     this.vel.x = -this.vel.x;
   }
   }
+
 }
 
 class segment{
