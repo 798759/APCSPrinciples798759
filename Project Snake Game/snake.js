@@ -34,15 +34,28 @@ class snake{
   }
   eaten(){
     if(f1.getX()===this.loc.x&&f1.getY()===this.loc.y){
-      
+
+    }
+    getX(){
+      return this.loc.x;
+    }
+    getY(){
+      return this.loc.y;
     }
   }
 
 }
 
 class segment{
-  constructor(x,y){
-    this.loc = createVecctor(x,y);
-      this.segmentList = [];
+  constructor(){
+    this.loc = createVector(x,y);
+    if()
+    this.loc.x = snake1.getX();
+    this.loc.y = snake1.getY();
+  }
+  run(){
+
+  }
+  follow(){
   }
 }
