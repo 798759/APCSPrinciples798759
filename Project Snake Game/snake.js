@@ -3,7 +3,7 @@ class snake{
     this.loc = createVector(x,y);
     this.s = size;
     this.vel = createVector(this.s,this.s);
-
+    this.body = [];
   }
   run(){
     this.render();
@@ -30,6 +30,9 @@ class snake{
   checkEdges(){
   if(this.loc.x<0|| this.loc.x> width){
     this.vel.x = -this.vel.x;
+  }
+  loadSegments(){
+    
   }
   }
   eaten(){
