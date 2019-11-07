@@ -14,7 +14,7 @@ runFood();
 
 //  The draw function is called @ 30 fps
 function draw() {
-snake1.run();
+snake1.run();// sup mr. etlin e
 //runFood();
 }
 
