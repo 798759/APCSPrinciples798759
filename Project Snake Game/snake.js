@@ -30,35 +30,14 @@ class snake{
   checkEdges(){
   if(this.loc.x<0|| this.loc.x> width){
     this.vel.x = -this.vel.x;
+    }
   }
   loadSegments(){
-    
-  }
+
   }
   eaten(){
     if(f1.getX()===this.loc.x&&f1.getY()===this.loc.y){
 
-    }
-    getX(){
-      return this.loc.x;
-    }
-    getY(){
-      return this.loc.y;
+      }
     }
   }
-
-}
-
-class segment{
-  constructor(){
-    this.loc = createVector(x,y);
-    if()
-    this.loc.x = snake1.getX();
-    this.loc.y = snake1.getY();
-  }
-  run(){
-
-  }
-  follow(){
-  }
-}

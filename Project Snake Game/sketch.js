@@ -9,18 +9,19 @@ function setup() {
   cell = width/32;
 snake1 = new snake(100,100,cell);
 frameRate(10);
-runFood();
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
-snake1.run();// sup mr. etlin e
-//runFood();
+paintLines();
+line()
+//background(5,5,5);
+//snake1.run();
 }
 
-function runFood(){
-  var x = int(random(0,32));
-  var y= int(random(0,32));
-  var f1 = new food(x*cell,y*cell,25,25);
-  f1.run()
+function paintLines(){
+  stroke(255,255,2555);
+for(var i=0; i>width; i=i*cell){
+  line(i,0,i,height);
+  }
 }
