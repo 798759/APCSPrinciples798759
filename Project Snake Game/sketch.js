@@ -5,23 +5,26 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-
   cell = width/32;
-snake1 = new snake(100,100,cell);
-frameRate(10);
+  snake1 = new snake(100,100,cell);
+  frameRate(10);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
-paintLines();
-line()
-//background(5,5,5);
-//snake1.run();
+background(5,5,5);
+paintLines(108, 110, 89);
+snake1.run();
 }
 
-function paintLines(){
-  stroke(255,255,2555);
-for(var i=0; i>width; i=i*cell){
-  line(i,0,i,height);
+
+
+function paintLines(r,g,b){
+  stroke(r,g,b);
+  for(var i=0; i<width; i=i+cell){
+    line(i,0,i,height);
+  }
+  for(var i=0; i<height; i=i+cell){
+    line(0,i,height,i);
   }
 }

@@ -10,7 +10,7 @@ class snake{
     this.move();
   }
   render(){
-    fill(255,255,0); /// Set Color of Snake
+    fill(4,181,54); /// Set Color of Snake
     rect(this.loc.x,this.loc.y,this.s,this.s)
   }
   move(){
@@ -33,7 +33,12 @@ class snake{
     }
   }
   loadSegments(){
-
+    this.body.push(createVector(x,y))
+  }
+  renderSegments(){
+    for(var i=0; i>body.length; i++){
+      rect(this.body.loc.x,this.body.loc.y,this.s,this.s);
+    }
   }
   eaten(){
     if(f1.getX()===this.loc.x&&f1.getY()===this.loc.y){
