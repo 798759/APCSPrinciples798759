@@ -41,8 +41,8 @@ class snake{
     }
   }
   eaten(){
-    if(f1.getX()===this.loc.x&&f1.getY()===this.loc.y){
-
+    if(food.getX()===this.loc.x&&food.getY()===this.loc.y){
+      return true;
       }
     }
   }

@@ -15,6 +15,6 @@ class food{
     return this.x;
   }
   getY(){
-    return this.y
+    return this.y;
   }
 }
