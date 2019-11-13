@@ -15,7 +15,7 @@ function draw() {
 background(5,5,5);
 paintLines(108, 110, 89);
 snake1.run();
-runFood();
+//runFood();
 }
 
 
@@ -32,11 +32,17 @@ function paintLines(r,g,b){
 
 function runFood(){
 var first = 0;
-  if(snake1.eaten()===true||first===0){
+  if(eaten()===true||first===0){
     var x = random(0,32)*cell;
     var y = random(0,32)*cell;
     food = new food(x,y,cell);
     first++;
   }
   food.render();
+}
+
+function eaten(){
+  if(food.getX()===snake1.getX()&&food.getY()===snake1.getY()){
+    return true;
+  }
 }

@@ -40,9 +40,10 @@ class snake{
       rect(this.body.loc.x,this.body.loc.y,this.s,this.s);
     }
   }
-  eaten(){
-    if(food.getX()===this.loc.x&&food.getY()===this.loc.y){
-      return true;
-      }
-    }
+  getX(){
+    return this.loc.x;
   }
+  getY(){
+    return this.loc.y;
+  }  
+}
