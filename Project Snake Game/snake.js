@@ -8,6 +8,8 @@ class snake{
   run(){
     this.render();
     this.move();
+    this.loadSegments();
+    this.renderSegments();
   }
   render(){
     fill(4,181,54); /// Set Color of Snake
@@ -33,12 +35,19 @@ class snake{
     }
   }
   loadSegments(){
-    this.body.push(createVector(x,y))
+    var x = this.loc.x;
+    var y = this.loc.y;
+    this.body.push(createVector(0,0))
   }
   renderSegments(){
-    for(var i=0; i>body.length; i++){
+    for(var i=0; i>this.body.length; i++){
       rect(this.body.loc.x,this.body.loc.y,this.s,this.s);
     }
+  }
+  update(){
+    var move = createVector(0,0);
+    move.mult(this.s);
+    this.head.add(this.move);
   }
   getX(){
     return this.loc.x;

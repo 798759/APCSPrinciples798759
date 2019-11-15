@@ -7,7 +7,7 @@ function setup() {
   fill(200, 30, 150);
   cell = width/32;
   snake1 = new snake(100,100,cell);
-  food = new food(50,50,cell);
+  food = new Food(50,50,cell);
   frameRate(7);
 }
 
@@ -32,11 +32,11 @@ function paintLines(r,g,b){
 }
 
 function runFood(){
-var first = 0;
-  if(first===0||eaten()===true){
+  var first = 1;
+  if(first===1||eaten()===true){
     var x = random(0,32)*cell;
     var y = random(0,32)*cell;
-    food = new food(x,y,cell);
+    food = new Food(x,y,cell);
     first++;
   }
   food.render();
