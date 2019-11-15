@@ -13,7 +13,7 @@ class snake{
     fill(4,181,54); /// Set Color of Snake
     rect(this.loc.x,this.loc.y,this.s,this.s)
   }
-  move(){
+  move(){// moves the snake
     if(keyCode===LEFT_ARROW){
       this.loc.x = this.loc.x - this.vel.x;
     }
@@ -45,5 +45,5 @@ class snake{
   }
   getY(){
     return this.loc.y;
-  }  
+  }
 }
