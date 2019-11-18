@@ -33,11 +33,14 @@ function paintLines(r,g,b){
 
 function runFood(){
   var first = 1;
-  if(first===1||eaten()===true){
+  var ate;
+  ate = eaten();
+  if(first===1||ate===true){
     var x = random(0,32)*cell;
     var y = random(0,32)*cell;
     food = new Food(x,y,cell);
     first++;
+    ate = false;
   }
   food.render();
 }
