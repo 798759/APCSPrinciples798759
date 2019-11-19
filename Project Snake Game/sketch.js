@@ -1,5 +1,6 @@
 var snake1;
 var cell;
+var score;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -32,18 +33,21 @@ function paintLines(r,g,b){
 }
 
 function runFood(){
-  var first = 1;
-  var ate;
-  ate = eaten();
-  if(first===1||ate===true){
-    var x = random(0,32)*cell;
-    var y = random(0,32)*cell;
-    food = new Food(x,y,cell);
-    first++;
-    ate = false;
-  }
   food.render();
+  if(eaten()===true){
+    changeFood();
+  }
 }
+function changeFood(){
+    var x = int(random(0,32))*cell;
+    var y = int(random(0,32))*cell;
+    food = new Food(x,y,cell);
+    score ++;
+}
+function runScore(){
+
+}
+
 
 function eaten(){
   if(food.getX()===snake1.getX()&&food.getY()===snake1.getY()){
