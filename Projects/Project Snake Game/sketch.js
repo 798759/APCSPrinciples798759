@@ -15,10 +15,9 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
 background(5,5,5);
-//paintLines(108, 110, 89);
-//snake1.run();
-//runFood();
-runScore();
+paintLines(108, 110, 89);
+snake1.run();
+runFood();
 }
 
 
@@ -43,10 +42,10 @@ function changeFood(){
     var x = int(random(0,32))*cell;
     var y = int(random(0,32))*cell;
     food = new Food(x,y,cell);
-    score+=1;
+    score ++;
 }
 function runScore(){
-  text("Score:"+score,50,50);
+
 }
 
 
