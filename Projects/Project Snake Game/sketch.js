@@ -1,6 +1,6 @@
 var snake1;
 var cell;
-var score;
+var score =0;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -9,15 +9,16 @@ function setup() {
   cell = width/32;
   snake1 = new snake(100,100,cell);
   food = new Food(50,50,cell);
-  frameRate(7);
+  frameRate(10);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
 background(5,5,5);
-paintLines(108, 110, 89);
+toggleGrid();
 snake1.run();
 runFood();
+runScore();
 }
 
 
@@ -29,6 +30,13 @@ function paintLines(r,g,b){
   }
   for(var i=0; i<height; i=i+cell){
     line(0,i,height,i);
+  }
+}
+function toggleGrid(){
+var temp = keyCode;
+var on;
+  if(keyCode===71){
+    
   }
 }
 
@@ -45,7 +53,9 @@ function changeFood(){
     score ++;
 }
 function runScore(){
-
+  fill(255,255,255);
+  textSize(16);
+  text(("Score: "+score),width-100,50);
 }
 
 
