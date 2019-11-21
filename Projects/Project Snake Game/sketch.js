@@ -15,7 +15,7 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
 background(5,5,5);
-toggleGrid();
+//toggleGrid();
 snake1.run();
 runFood();
 runScore();
@@ -34,9 +34,12 @@ function paintLines(r,g,b){
 }
 function toggleGrid(){
 var temp = keyCode;
-var on;
+var on=0;
   if(keyCode===71){
-    
+    on=3;
+    //keyCode=temp;
+  }else if (on%2===0) {
+    paintLines(255,255,255);
   }
 }
 
@@ -51,6 +54,7 @@ function changeFood(){
     var y = int(random(0,32))*cell;
     food = new Food(x,y,cell);
     score ++;
+    snake1.loadSegments();
 }
 function runScore(){
   fill(255,255,255);
