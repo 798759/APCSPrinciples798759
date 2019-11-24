@@ -1,35 +1,28 @@
 class snake{
-  constructor(x,y,size){
+  constructor(x,y,size){//snake constructor
     this.loc = createVector(x,y);
-    this.s = size;
-    this.vel = createVector(this.s,this.s);
+    this.s = size; // size of snake
+    this.vel = createVector(0,0);
     this.body = [];
   }
   run(){
-    this.render();
-    this.move();
-    //this.loadSegments();
-    //this.update();
-    this.renderSegments();
+    this.render();// renders everything
+    this.move(); // move everything
+    this.isSnakeAlive(); // chechs to see if u lost
   }
   render(){
     fill(4,181,54); /// Set Color of Snake
-    rect(this.loc.x,this.loc.y,this.s,this.s);
+    rect(this.loc.x,this.loc.y,this.s,this.s);//Renders head
+    if(this.body.length>0){
+      for(var i=0; i<this.body.length; i++){//renders body
+        fill(4,181,54);
+        rect(this.body[i].x,this.body[i].y,this.s,this.s);
+      }
+    }
   }
   move(){// moves the snake
-    if(keyCode===LEFT_ARROW||keyCode===65){
-      this.loc.x = this.loc.x - this.vel.x;
-    }
-    if(keyCode===RIGHT_ARROW||keyCode===68){
-      this.loc.x = this.loc.x + this.vel.x;
-    }
-    if(keyCode===38||keyCode===87){
-        this.loc.y = this.loc.y-this.vel.y;
-    }
-    if(keyCode===40||keyCode===83){
-      this.loc.y=this.loc.y + this.vel.y;
-    }
     this.update();
+    this.loc.add(this.vel);
   }
   checkEdges(){
   if(this.loc.x<0|| this.loc.x> width){
@@ -37,16 +30,9 @@ class snake{
     }
   }
   loadSegments(){
-    var x = this.loc.x;
-    //var y = this.loc.y;
-    this.body.push(createVector(0,0))
+    this.body.push(createVector(this.loc.x,this.loc.y))
   }
-  renderSegments(){
-    for(var i=0; i>this.body.length; i++){
-      fill(4,181,54);
-      rect(this.body.x,this.body.y,this.s,this.s);
-    }
-  }
+
   update(){
     if(this.body.length>0){
     for(var i=this.body.length-1; i>0; i--){
@@ -57,8 +43,18 @@ class snake{
    this.body[0].y=this.loc.y;
   }
 }
+isSnakeAlive(){
+  for(var i=0; i<this.body.length; i++){
+    if(this.loc.x===this.body[i].x&&this.loc.y===this.body[i].y){// checks if snake ran into itself
+      gameState=3;
+    }
+  }
+  if(this.loc.x>width||this.loc.y>height||this.loc.x<0||this.loc.y<0){// checks if snake hit the edge of map
+    gameState=3;
+  }
+}
   getX(){
-    return this.loc.x;
+    return this.loc.x;// getters used for eaten method
   }
   getY(){
     return this.loc.y;

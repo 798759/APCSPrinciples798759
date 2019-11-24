@@ -9,10 +9,10 @@ class Food{
   }
   render(){
     fill(240,20,5);
-    rect(this.x,this.y,this.size,this.size);
+    rect(this.x,this.y,this.size,this.size);// renders food
   }
   getX(){
-    return this.x;
+    return this.x; // getters for eaten method
   }
   getY(){
     return this.y;
