@@ -4,7 +4,7 @@ class Ship{
     this.vel = createVector(dx,dy);
     this.acl = createVector(0,.1);
     this.clr = color(255,255,255); // SET COLOR OF SHIP
-    this.angle  = this.loc.dist(ball.loc);
+    //this.angle  = this.loc.dist(ball.loc);
   }
   run(){
     this.render();
@@ -14,10 +14,10 @@ class Ship{
 
   render(){
     fill(this.clr);
-    this.angle = this.angle + 0.1;
+   // this.angle = this.angle + 0.1;
     push();
     translate(this.loc.x, this.loc.y);
-    rotate(this.angle);
+   // rotate(this.angle);
     triangle(-5,8,5,8,0,-8);
     pop();
   }
